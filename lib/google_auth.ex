@@ -27,6 +27,15 @@ defmodule GoogleAuth do
   If token passed is not valid it will add 'google_auth_failure' key with value consisting of
   error message in private inside Plug.Conn.
 
+  You need to add following config in to make GoogleAuth plug work.
+
+      config :google_auth,
+        google_client_id: "646252629386-aalvnktjfsql35e0cmb28qirhvj7t2p.apps.googleusercontent.com"
+
+  Above is the google client id that we get when we register the oauth client at google.
+  Access token will only be valid if its generated using above clien id.
+
+
   ### Usage with phoenix framework:
 
       # Inside routes.ex
@@ -65,6 +74,8 @@ defmodule GoogleAuth do
           first_token: %{name: "rohan", email: "rohan@gmail.com", picture: "http://a.com/pic.jpg"},
           second_token: %{name: "raj", email: "raj@gmail.com", picture: "http://a.com/pic1.jpg"}
         }
+      config :google_auth,
+        google_client_id: "646252629386-aalvnktjfsql35e0cmb28qirhvj7t2p.apps.googleusercontent.com"
 
     'first_token' and 'second_token' represent the valid access_token which will.
     Passing 'first_token' as access_token in test will add

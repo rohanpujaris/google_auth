@@ -3,10 +3,13 @@
 ## Installation
 
   1. Add google_auth to your list of dependencies in `mix.exs`:
+    ```elixir
+      def deps do
+        [{:google_auth, "~> 0.0.1"}]
+      end
+    ```
 
-        def deps do
-          [{:google_auth, "~> 0.0.1"}]
-        end
+### Description
 
 GoogleAuth package provide a simple google based authentication. It does not provide the request phase( ie. Authentication url), it just implements the callback phase. You just need to pass google access_token received from google using google client side authentication. Using [Google api client library](https://developers.google.com/api-client-library/javascript/features/authentication) you can generate access token on client side and pass it to a server. You can pass access_token as a query params or in headers
 

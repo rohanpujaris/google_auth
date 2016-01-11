@@ -160,11 +160,6 @@ defmodule GoogleAuth do
       mock_for_test GoogleAuth
       plug AccessTokenExtractor
       plug @google_auth
-      @behaviour GoogleAuth.Behaviour
     end
   end
-end
-
-defmodule GoogleAuth.Behaviour do
-  @callback callback(Plug.Conn.t, map) :: any
 end
